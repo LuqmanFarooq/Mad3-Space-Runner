@@ -15,8 +15,12 @@ public class Explosion : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
-            IveBeenHit(contact.point);
+        if (collision.transform.CompareTag("Asteroid"))
+        {
+            foreach (ContactPoint contact in collision.contacts)
+                IveBeenHit(contact.point);
             Destroy(gameObject, 3);
+        }
+
     }
 }

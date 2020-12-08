@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1531739299}
   m_Layer: 0
   m_Name: RightThruster
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,7 +70,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 1981871799}
   m_Layer: 0
   m_Name: LeftThruster
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 0.15
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 2054439268}
   m_Layer: 0
   m_Name: thrusters
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,10 +315,9 @@ GameObject:
   - component: {fileID: 8464167453347598780}
   - component: {fileID: 8464167453347598721}
   - component: {fileID: 8464167453347598722}
-  - component: {fileID: 8464167453347598723}
   m_Layer: 0
   m_Name: right wing
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -362,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d866f3e5dee2b4a40a09d29eddeb90d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -383,19 +382,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8464167453347598723
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464167453347598781}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8464167453384544985
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,9 +393,10 @@ GameObject:
   - component: {fileID: 8464167453384544991}
   - component: {fileID: 8464167453384544984}
   - component: {fileID: 8633819222593325465}
+  - component: {fileID: 2037953530}
   m_Layer: 0
   m_Name: Player Ship
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,8 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7037676680a04ea45be820d4f000c3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 30
-  turnSpeed: 100
+  movementSpeed: 80
+  turnSpeed: 120
 --- !u!54 &8633819222593325465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -460,6 +447,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2037953530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464167453384544985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5d8f9a25e09c44cbe98daf765aedb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 100008, guid: 54b661f759164cb4cb9424de6a512cf8, type: 3}
 --- !u!1 &8464167453481007992
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,10 +471,9 @@ GameObject:
   - component: {fileID: 8464167453481007999}
   - component: {fileID: 8464167453481007996}
   - component: {fileID: 8464167453481007997}
-  - component: {fileID: 8464167453481007998}
   m_Layer: 0
   m_Name: wing crossbar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +517,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7261c6e08accb8042b91ddc334a971f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -539,19 +538,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8464167453481007998
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464167453481007992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8464167453687192233
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +552,7 @@ GameObject:
   - component: {fileID: 8464167453687192232}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,7 +599,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 699ba32d7aba1d24a8cb8163461a774a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -645,8 +631,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.1108074, y: 1, z: 1}
+  m_Center: {x: 0.009840012, y: 0, z: 0}
 --- !u!1 &8464167454094618315
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,10 +644,9 @@ GameObject:
   - component: {fileID: 8464167454094618314}
   - component: {fileID: 8464167454094618319}
   - component: {fileID: 8464167454094618312}
-  - component: {fileID: 8464167454094618313}
   m_Layer: 0
   m_Name: left wing
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -705,7 +690,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d866f3e5dee2b4a40a09d29eddeb90d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -726,16 +711,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &8464167454094618313
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464167454094618315}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

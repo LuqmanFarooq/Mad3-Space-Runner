@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CoinManager : MonoBehaviour
+{
+    [SerializeField] int numberOfCoinsOnAnAxis = 10;
+    [SerializeField] int gridSpacing = 25;
+    [SerializeField] GameObject coin;
+
+    private void Start()
+    {
+        PlaceCoins();
+    }
+
+    void PlaceCoins()
+    {
+        for (int x = 0; x < numberOfCoinsOnAnAxis; x++)
+        {
+            for (int y = 0; y < numberOfCoinsOnAnAxis; y++)
+            {
+                for (int z = 0; z < numberOfCoinsOnAnAxis; z++)
+                {
+                    InstantiateCoins(x, y, z);
+                }//z
+            }//y
+        }//x
+    }//placeAsteroids
+
+    void InstantiateCoins(int x, int y, int z)
+    {
+        Instantiate(coin,
+            new Vector3(transform.position.x + (x * gridSpacing) + CoinsOffSet(),
+            transform.position.y + (y * gridSpacing) + CoinsOffSet(),
+            transform.position.z + (z * gridSpacing) + CoinsOffSet()),
+            Quaternion.identity,
+               transform);
+    }
+
+    float CoinsOffSet()
+    {
+        return Random.Range(-gridSpacing, gridSpacing);
+    }
+    
+}
