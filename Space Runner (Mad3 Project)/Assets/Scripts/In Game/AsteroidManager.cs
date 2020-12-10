@@ -6,8 +6,10 @@ public class AsteroidManager : MonoBehaviour
 {
     [SerializeField] int numberOfAsteroidsOnAnAxis = 10;
     [SerializeField] int gridSpacing = 25;
-    [SerializeField] Asteroid asteroid;
+    [SerializeField] Asteroid asteroidPrefab;
+    
 
+    public List<Asteroid> asteroid = new List<Asteroid>();
     private void Start()
     {
         PlaceAsteroids();
@@ -25,20 +27,24 @@ public class AsteroidManager : MonoBehaviour
                 }//z
             }//y
         }//x
+        
     }//placeAsteroids
 
     void InstantiateAsteroid(int x, int y, int z)
     {
-        Instantiate(asteroid,
+       Asteroid temp = Instantiate(asteroidPrefab,
             new Vector3(transform.position.x + (x * gridSpacing) + AsteroidOffSet(),
             transform.position.y + (y * gridSpacing) + AsteroidOffSet(),
             transform.position.z + (z * gridSpacing) + AsteroidOffSet()),
             Quaternion.identity,
-               transform);
+               transform) as Asteroid;
+        asteroid.Add(temp);
     }
 
     float AsteroidOffSet()
     {
        return Random.Range(-gridSpacing, gridSpacing);
     }
+
+    
 }

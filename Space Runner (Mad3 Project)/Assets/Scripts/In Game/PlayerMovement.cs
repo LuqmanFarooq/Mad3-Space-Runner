@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
-    public CloakingPotionPickup CloakingPotionPickup;
+    public SlowPickUpManager PickUpManager;
     // setting the speed
-   public float movementSpeed = 50f;
+    public float movementSpeed = 50f;
    public float turnSpeed = 100f;
     // for calculating distance
     //public Text distanceMoved;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         myTransform = transform;
-        CloakingPotionPickup = GameObject.FindObjectOfType<CloakingPotionPickup>();
+        PickUpManager = GameObject.FindObjectOfType<SlowPickUpManager>();
 
     }
    
@@ -31,7 +31,13 @@ public class PlayerMovement : MonoBehaviour
         Thrust();
         LevelUpSpeed();
         
+            SlowPotion();
+       
         
+    }
+    void PotionFalse()
+    {
+        PickUpManager.slowPotion = false;
     }
 
     void Thrust()
@@ -73,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = 125f;
             turnSpeed = 120f;
         }
+        if (scr < 150)
+        {
+            movementSpeed = 50f;
+            turnSpeed = 100f;
+        }
     }
     public void slowSpeed(float movement,float turn)
     {
@@ -80,4 +91,19 @@ public class PlayerMovement : MonoBehaviour
         turnSpeed = turn;
     }
     
+    void SlowPotion()
+    {
+        // if palyer collects slow green potion then changing the speed
+        if (PickUpManager.slowPotion == true)
+        {
+            slowSpeed(30f, 60f);
+            // setting the bool back to false after 10 seconds
+            Invoke("PotionFalse", 10);
+        }
+        // changing the speed of player back to normal after slowpotion 
+        if (PickUpManager.slowPotion == false)
+        {
+            LevelUpSpeed();
+        }
+    }
 }
