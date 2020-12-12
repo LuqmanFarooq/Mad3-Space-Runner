@@ -6,9 +6,11 @@ public class Asteroid : MonoBehaviour
 {
     Transform myTransform;
     Vector3 randomRotation;
-    [SerializeField] float minScale = 2.4f;
-    [SerializeField] float maxScale = 6f;
-    [SerializeField] float rotationOffset = 50f;
+    // minimum size of asteroid
+    public float minScale = 2f;
+    // maximun size of asteroid
+    public float maxScale = 6.4f;
+    public float rotationOffset = 50f;
    
     // Update is called once per frame
     private void Awake()

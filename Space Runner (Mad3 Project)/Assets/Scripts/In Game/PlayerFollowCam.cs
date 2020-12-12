@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerFollowCam : MonoBehaviour
 {
-    [SerializeField] Transform target;
-    [SerializeField] Vector3 defaultDistance = new Vector3(0f, 2f, -10f);
-    [SerializeField] float distanceDamp = 10f;
-    [SerializeField] float rotationDamp = 10f;
+    public Transform target;
+    public Vector3 defaultDistance = new Vector3(0f, 2f, -10f);
+    public float distanceDamp = 10f;
+    public float rotationDamp = 10f;
 
 
     Transform myTransform;

@@ -31,8 +31,7 @@ public class PlayerMovement : MonoBehaviour
         Thrust();
         LevelUpSpeed();
         
-            SlowPotion();
-       
+        SlowPotion();
         
     }
     void PotionFalse()
@@ -69,6 +68,11 @@ public class PlayerMovement : MonoBehaviour
 
         levelUpScore = GameData.singleton.science.text.ToString();
         int scr = int.Parse(levelUpScore);
+        if (scr < 150)
+        {
+            movementSpeed = 50f;
+            turnSpeed = 100f;
+        }
         if (scr >= 150 && scr<250)
         {
             movementSpeed = 100f;
@@ -79,10 +83,10 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = 125f;
             turnSpeed = 120f;
         }
-        if (scr < 150)
+        if (scr >= 300)
         {
-            movementSpeed = 50f;
-            turnSpeed = 100f;
+            movementSpeed = 135f;
+            turnSpeed = 120f;
         }
     }
     public void slowSpeed(float movement,float turn)
@@ -96,12 +100,12 @@ public class PlayerMovement : MonoBehaviour
         // if palyer collects slow green potion then changing the speed
         if (PickUpManager.slowPotion == true)
         {
-            slowSpeed(30f, 60f);
+            slowSpeed(40f, 60f);
             // setting the bool back to false after 10 seconds
             Invoke("PotionFalse", 10);
         }
         // changing the speed of player back to normal after slowpotion 
-        if (PickUpManager.slowPotion == false)
+        else if (PickUpManager.slowPotion == false)
         {
             LevelUpSpeed();
         }

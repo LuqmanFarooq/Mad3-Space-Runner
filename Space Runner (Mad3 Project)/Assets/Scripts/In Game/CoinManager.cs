@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CoinManager : MonoBehaviour
 {
-    [SerializeField] int numberOfCoinsOnAnAxis = 10;
-    [SerializeField] int gridSpacing = 25;
-    [SerializeField] GameObject coin;
+    public int numberOfCoinsOnAnAxis = 15;
+    public int gridSpacing = 100;
+    public GameObject coin;
 
     private void Start()
     {

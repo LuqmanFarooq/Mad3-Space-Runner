@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AsteroidManager : MonoBehaviour
 {
-    [SerializeField] int numberOfAsteroidsOnAnAxis = 10;
-    [SerializeField] int gridSpacing = 25;
-    [SerializeField] Asteroid asteroidPrefab;
+    public int numberOfAsteroidsOnAnAxis = 20;
+    public int gridSpacing = 60;
+    public Asteroid asteroidPrefab;
     
 
     public List<Asteroid> asteroid = new List<Asteroid>();

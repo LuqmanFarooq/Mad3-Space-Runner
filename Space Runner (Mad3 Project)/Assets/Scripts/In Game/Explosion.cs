@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] GameObject explosion;
+    public GameObject explosion;
     
     void IveBeenHit(Vector3 pos)
     {
@@ -19,7 +19,7 @@ public class Explosion : MonoBehaviour
         {
             foreach (ContactPoint contact in collision.contacts)
                 IveBeenHit(contact.point);
-            Destroy(gameObject, 3);
+            Destroy(gameObject, 2);
         }
 
     }
