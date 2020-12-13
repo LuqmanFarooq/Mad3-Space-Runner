@@ -9,6 +9,7 @@ public class RegisterScore : MonoBehaviour
     {
         // settting the score for GameData
         GameData.singleton.science = this.GetComponent<Text>();
+        GameData.singleton.UpdateScore(0);
     }
 
    
