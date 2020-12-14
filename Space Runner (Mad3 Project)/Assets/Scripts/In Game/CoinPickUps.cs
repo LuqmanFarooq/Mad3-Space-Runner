@@ -10,7 +10,7 @@ public class CoinPickUps : MonoBehaviour
         if (collision.transform.CompareTag("Player"))
         {
             AudioSource.PlayClipAtPoint(coinPickSound, gameObject.transform.position);
-            GameData.singleton.UpdateScore(50);
+            GameData.singleton.UpdateScore(20);
             // destroy that science/coin object
             Destroy(this.gameObject);
 

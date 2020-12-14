@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementMulti : MonoBehaviour
 {
     public SlowPickUpManager PickUpManager;
     // setting the speed
@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     {
         myTransform = transform;
         PickUpManager = GameObject.FindObjectOfType<SlowPickUpManager>();
+        // settting score to zero for 2nd player
+        GameData.singleton.score = 0;
     }
    
     private void Update()
@@ -109,5 +111,4 @@ public class PlayerMovement : MonoBehaviour
             LevelUpSpeed();
         }
     }
-   
 }

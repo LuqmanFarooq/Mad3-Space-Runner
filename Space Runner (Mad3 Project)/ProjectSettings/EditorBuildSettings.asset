@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level123.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: 3f296296c61d9054d8258f5f822a2e8b
+    path: Assets/Scenes/MultiPlayer1.unity
+    guid: ebce4110b832f5d4e9ef51c642bce4bc
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayer2.unity
+    guid: c02a0087b9b472c4ca2ec1022d290218
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Explosion : MonoBehaviour
+
+public class ExplosionMulti1 : MonoBehaviour
 {
-    public GameObject gameOverPanel;
-    public GameObject explosion;
+    public GameObject player2ReadyPanel;
+    public GameObject gameUi;
+    public GameObject explosionMulti;
+    public GameObject data;
     public bool isPlayerDead = false;
     void IveBeenHit(Vector3 pos)
     {
-        GameObject go = Instantiate(explosion, pos, Quaternion.identity, transform) as GameObject;
+        GameObject go = Instantiate(explosionMulti, pos, Quaternion.identity, transform) as GameObject;
         Destroy(go, 6f);
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,19 +25,21 @@ public class Explosion : MonoBehaviour
                 IveBeenHit(contact.point);
             Destroy(gameObject, 2);
             isPlayerDead = true;
+
             // setting the last score to the playerprefs to dispay in stats
             PlayerPrefs.SetInt("lastscore", PlayerPrefs.GetInt("score"));
-            PlayerPrefs.SetInt("PlayerScore", PlayerPrefs.GetInt("score"));
+            // settign player 1 Score
+            PlayerPrefs.SetInt("player1Score", PlayerPrefs.GetInt("score"));
             // comparing the and setting the highscore in playerprefs
-                int hs = PlayerPrefs.GetInt("highScore");
-                if(hs <= PlayerPrefs.GetInt("score"))
-                {
-                    PlayerPrefs.SetInt("highScore", PlayerPrefs.GetInt("score"));
-                }
-                else
-                {
-                    PlayerPrefs.SetInt("highScore", hs);
-                }
+            int hs = PlayerPrefs.GetInt("highScore");
+            if (hs <= PlayerPrefs.GetInt("score"))
+            {
+                PlayerPrefs.SetInt("highScore", PlayerPrefs.GetInt("score"));
+            }
+            else
+            {
+                PlayerPrefs.SetInt("highScore", hs);
+            }
             
         }
 
@@ -42,9 +47,13 @@ public class Explosion : MonoBehaviour
 
     private void Update()
     {
-        if(isPlayerDead)
+        if (isPlayerDead)
         {
-            gameOverPanel.SetActive(true);
+            player2ReadyPanel.SetActive(true);
+            gameUi.SetActive(false);
+            Destroy(data);
         }
     }
+    
 }
+

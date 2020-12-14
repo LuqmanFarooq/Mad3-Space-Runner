@@ -4,15 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame ()
+    public void SinglePlayerGame ()
     {
         SceneManager.LoadScene("Level123");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void Instruction()
+    public void MultiPlayer1Game()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("MultiPlayer1");
+    }
+    public void MultiPlayer2Game()
+    {
+        SceneManager.LoadScene("MultiPlayer2");
+        GameData.singleton.player2Turn = true;
     }
     public void QuitGame ()
     {

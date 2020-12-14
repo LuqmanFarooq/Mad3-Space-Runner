@@ -429,6 +429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7037676680a04ea45be820d4f000c3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickUpManager: {fileID: 0}
+  movementSpeed: 50
+  turnSpeed: 100
 --- !u!54 &8633819222593325465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -441,7 +444,7 @@ Rigidbody:
   m_Drag: 1
   m_AngularDrag: 0.7
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -457,7 +460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5d8f9a25e09c44cbe98daf765aedb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
   explosion: {fileID: 100008, guid: 54b661f759164cb4cb9424de6a512cf8, type: 3}
+  isPlayerDead: 0
 --- !u!1 &8464167453481007992
 GameObject:
   m_ObjectHideFlags: 0

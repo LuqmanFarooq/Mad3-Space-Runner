@@ -31,7 +31,7 @@ public class SkyboxController : MonoBehaviour
         // parsing score as int to store in scr
        int  scr = int.Parse(levelUpScore);
         // checking if score is greater than or equal to 150 then change the sky box to show level change
-        if(scr >= 150)
+        if(scr >= 140)
         {
             RenderSettings.skybox = level2sky;
             // checks if object is not destroyed
@@ -45,7 +45,7 @@ public class SkyboxController : MonoBehaviour
             
         }
         // checking if score is greater than or equal to 250 then change the sky box to show level change
-        if (scr >= 250)
+        if (scr >= 260)
         {
             RenderSettings.skybox = level3Sky;
             // checks if object is not destroyed

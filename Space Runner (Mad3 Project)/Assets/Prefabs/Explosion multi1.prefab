@@ -18500,7 +18500,7 @@ GameObject:
   - component: {fileID: 19800008}
   - component: {fileID: 7941837374831454265}
   m_Layer: 0
-  m_Name: Explosion single fallback
+  m_Name: Explosion multi1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
